@@ -1,44 +1,48 @@
 /* remove community crap from coin page */
 
-@media (min-width: 1280px){
-    .dIhIlI {
-        grid-template-columns: 25% 75%!important;
-    }
-    .dIhIlI > div.coin-Community {
-        display: none!important;
-    }
-}
+@media (min-width: 1280px) {
+  .dIhIlI {
+    grid-template-columns: 25% 75% !important;
+  }
+  .dIhIlI > div.coin-Community {
+    display: none !important;
+  }
+  .kpxeqD:has(> [data-title="Community"]) {
+    display: none !important;
+  }
 
-/* remove community crap from home */
+  /* remove community crap from home */
 
-.jSZydc {
-    display: none!important;
-}
+  .jSZydc {
+    display: none !important;
+  }
 
-.jWCyUp {
+  .jWCyUp {
     width: 100% !important;
-    max-width: 49%!important;
-}
+    max-width: 49% !important;
+  }
 
-.sc-8b3d12a8-1.hDjzmZ.menu-item-2 {
-    display: none!important;
-}
+  .sc-8b3d12a8-1.hDjzmZ.menu-item-2 {
+    display: none !important;
+  }
 
-/* remove newsletter block */
+  /* remove newsletter block */
 
-.block-newsletter, .seo-text__title{
-    display: none!important;
-}
+  .block-newsletter,
+  .seo-text__title {
+    display: none !important;
+  }
 
-/* fix weird spacing with pagination */
+  /* fix weird spacing with pagination */
 
-.iYjWHz {
-    margin-top: 1rem!important;
-    margin-bottom: 4rem!important;
-}
+  .iYjWHz {
+    margin-top: 1rem !important;
+    margin-bottom: 4rem !important;
+  }
 
-/* remove ads */
+  /* remove ads */
 
-.coin-ad-banner {
-    display: none!important;
+  .coin-ad-banner {
+    display: none !important;
+  }
 }
