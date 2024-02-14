@@ -1,0 +1,8 @@
+@media (min-width: 1280px){
+    .dIhIlI {
+        grid-template-columns: 25% 75%;
+    }
+    .dIhIlI > div.coin-Community {
+        display: none;
+    }
+}
