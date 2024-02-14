@@ -16,13 +16,6 @@
       "128": "images/icon128.png"
     }
   },
-  "declarative_net_request": {
-    "rule_resources": [{
-      "id": "ruleset_1",
-      "path": "rules.json",
-      "enabled": true
-    }]
-  },
   "content_scripts": [
     {
       "matches": ["*://coinmarketcap.com//*"],
