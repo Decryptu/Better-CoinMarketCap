@@ -11,6 +11,10 @@
     display: none !important;
   }
 
+  .apfGM .base-text:has(> [data-title="Community"]) {
+    display: none !important;
+  }
+
   /* remove community crap from home */
 
   .jSZydc {
