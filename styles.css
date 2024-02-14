@@ -36,3 +36,9 @@
     margin-top: 1rem!important;
     margin-bottom: 4rem!important;
 }
+
+/* remove ads */
+
+.coin-ad-banner {
+    display: none!important;
+}
