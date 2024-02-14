@@ -18,9 +18,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://coinmarketcap.com//*"],
+      "matches": ["*://coinmarketcap.com/*"],
       "exclude_matches": [
-        "*://coinmarketcap.com//wp-admin/*"
+        "*://coinmarketcap.com/wp-admin/*"
     ],    
       "css": ["styles.css"],
       "js": ["content.js"]
