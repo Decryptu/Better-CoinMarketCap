@@ -1,6 +1,6 @@
-/* remove community crap from coin page */
-
 @media (min-width: 1280px) {
+  /* remove community crap from coin page */
+
   .dIhIlI {
     grid-template-columns: 25% 75% !important;
   }
@@ -8,10 +8,6 @@
     display: none !important;
   }
   .kpxeqD:has(> [data-title="Community"]) {
-    display: none !important;
-  }
-
-  .apfGM .base-text:has(> [data-title="Community"]) {
     display: none !important;
   }
 
@@ -48,5 +44,11 @@
 
   .coin-ad-banner {
     display: none !important;
+  }
+
+  /* back up fix position */
+
+  .dmGahW.dmGahW {
+    right: 3%;
   }
 }
