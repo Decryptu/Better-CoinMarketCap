@@ -50,6 +50,7 @@
 
   .dmGahW.dmGahW {
     right: 3% !important;
+    bottom: 3% !important;
   }
 
   /* remove top text */
@@ -58,7 +59,7 @@
     display: none !important;
   }
 
-  .klwDxi {
+  .klwDxi, .dxzdHs, .eRwbAi, .bfBsKu {
     margin-top: 2rem !important;
   }
 }
@@ -79,6 +80,7 @@ body.NIGHT {
   --c-color-gray-200: #27272A !important;
   --c-color-gray-400: #27272A !important;
   --bt-tertiary-bg-color: #27272A !important;
+  --card-bg: #27272A !important;
   --light-decrypt: #A1A1A9 !important;
   --shadow-normal: none !important;
 }
@@ -114,7 +116,7 @@ body.NIGHT .fvfywu{
   padding-bottom: 0.5rem !important;
 }
 
-body.NIGHT .kGHtvD, body.NIGHT .kqecWE, body.NIGHT .base-text, body.NIGHT .gzhhVY{
+body.NIGHT .kGHtvD, body.NIGHT .kqecWE, body.NIGHT .base-text:not(.jxpCgO), body.NIGHT .gzhhVY{
   color: var(--light-decrypt) !important;
 }
 
