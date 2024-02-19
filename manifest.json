@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Better CoinMarketCap",
   "description": "This extension enhances the CSS of CoinMarketCap.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icons": {
     "128": "icon.png"
   },
