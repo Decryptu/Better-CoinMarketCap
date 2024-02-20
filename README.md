@@ -12,15 +12,15 @@ Enhance your CoinMarketCap experience with "Better CoinMarketCap," a Chrome exte
 
 Below are some before and after screenshots to give you a feel for the enhancements "Better CoinMarketCap" brings to your browsing experience.
 
-### Dashboard View
+### Homepage View
 Before | After
 :---:|:---:
-![Old Dashboard](images/1-old.png) | ![New Dashboard](images/1-new.png)
+![Old Homepage](images/1-old.png) | ![New Homepage](images/1-new.png)
 
-### Market Trends View
+### Coin Page View
 Before | After
 :---:|:---:
-![Old Market Trends](images/2-old.png) | ![New Market Trends](images/2-new.png)
+![Old Coin Page](images/2-old.png) | ![New Coin Page](images/2-new.png)
 
 ## Installation
 
