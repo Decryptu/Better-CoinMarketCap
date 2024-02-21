@@ -75,6 +75,12 @@
   .fBjIZs button{
     border-radius: .5rem !important;
   }
+
+  /* remove top banner */
+
+  .bmCqYO {
+    display: none !important;
+  }
 }
 
 /* dark theme */
