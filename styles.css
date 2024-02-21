@@ -51,6 +51,7 @@
   .dmGahW.dmGahW, .dDHGBA {
     right: 3% !important;
     bottom: 3% !important;
+    opacity: .5!important;
   }
 
   /* remove top text */
@@ -61,6 +62,18 @@
 
   .klwDxi, .dxzdHs, .eRwbAi, .bfBsKu {
     margin-top: 2rem !important;
+  }
+
+  /* remove api and get listed */
+
+  .dBWlaq{
+    display: none !important;
+  }
+
+  /* bouton in search radius */
+
+  .fBjIZs button{
+    border-radius: .5rem !important;
   }
 }
 
@@ -85,14 +98,14 @@ body.NIGHT {
   --shadow-normal: none !important;
 }
 
-body.NIGHT .jWCyUp, body.NIGHT .jSZydc, body.NIGHT .kGHtvD, body.NIGHT .hYGzGT, body.NIGHT .dxcftz.dxcftz, body.NIGHT .hDjzmZ:hover > .submenu, body.NIGHT .hDjzmZ:hover .multiSubmenu{
+body.NIGHT .jWCyUp, body.NIGHT .jSZydc, body.NIGHT .kGHtvD, body.NIGHT .hYGzGT, body.NIGHT .dxcftz.dxcftz, body.NIGHT .hDjzmZ:hover > .submenu, body.NIGHT .hDjzmZ:hover .multiSubmenu, .hptPYH.hptPYH{
   background-color: var(--c-color-background-2) !important;
   border: 1px solid var(--border-decrypt) !important;
   box-shadow: none !important;
   border-radius: .5rem !important;
 }
 
-body.NIGHT .ePzlNg.ePzlNg th{
+body.NIGHT .ePzlNg.ePzlNg th, .dsflYb th{
   border-top: none !important;
 }
 
@@ -114,6 +127,7 @@ body.NIGHT div.tippy-box{
 
 body.NIGHT .fvfywu{
   padding-bottom: 0.5rem !important;
+  background-color: var(--c-color-background-2) !important;
 }
 
 body.NIGHT .kGHtvD, body.NIGHT .kqecWE, body.NIGHT .base-text:not(.jxpCgO), body.NIGHT .gzhhVY{
