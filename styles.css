@@ -90,6 +90,11 @@
   .bmCqYO {
     display: none !important;
   }
+
+  /* remove mobile popup */
+  .sc-8e172972-0.cIxgqW.app-banner{
+    display: none !important;
+  }
 }
 
 /* dark theme */
