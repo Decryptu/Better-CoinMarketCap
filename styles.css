@@ -12,14 +12,23 @@
   }
 
   /* remove community crap from home */
-
+/*
   .jSZydc {
-    display: none !important;
+    display: none !important; 
   }
 
   .jWCyUp {
     width: 100% !important;
     max-width: 49% !important;
+  }
+*/
+
+  .jSZydc .keen-slider {
+    display: none !important;
+  }
+
+  .jSZydc .aZNqQ {
+    visibility: visible !important;
   }
 
   .sc-8b3d12a8-1.hDjzmZ.menu-item-2 {
@@ -106,14 +115,6 @@ body.NIGHT {
 
 body:not(.NIGHT) .jWCyUp, body:not(.NIGHT) .hptPYH, body:not(.NIGHT) .jSZydc, body:not(.NIGHT) .kGHtvD, body:not(.NIGHT) .hYGzGT, body:not(.NIGHT) .dxcftz.dxcftz, body:not(.NIGHT) .hDjzmZ:hover > .submenu, body:not(.NIGHT) .hDjzmZ:hover .multiSubmenu, .hptPYH.hptPYH {
   border: 1px solid var(--c-color-gray-200) !important;
-  box-shadow: none !important;
-  border-radius: .5rem !important;
-}
-
-
-body.NIGHT .jWCyUp, body.NIGHT .jSZydc, body.NIGHT .kGHtvD, body.NIGHT .hYGzGT, body.NIGHT .dxcftz.dxcftz, body.NIGHT .hDjzmZ:hover > .submenu, body.NIGHT .hDjzmZ:hover .multiSubmenu, .hptPYH.hptPYH{
-  background-color: var(--c-color-background-2) !important;
-  border: 1px solid var(--border-decrypt) !important;
   box-shadow: none !important;
   border-radius: .5rem !important;
 }

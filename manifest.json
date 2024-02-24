@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Better CoinMarketCap",
   "description": "This extension enhances CoinMarketCap CSS and adds new features such as mcap/volume ratio.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "icons": {
     "128": "icon.png"
   },
@@ -23,7 +23,7 @@
         "*://coinmarketcap.com/wp-admin/*"
     ],    
       "css": ["styles.css"],
-      "js": ["content.js", "ratio.js"]
+      "js": ["content.js", "ratio.js", "cards.js"]
     }
   ]
 }
