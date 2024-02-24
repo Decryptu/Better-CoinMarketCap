@@ -1,4 +1,4 @@
-@media (min-width: 760px) {
+@media (min-width: 1280px) {
   /* remove community crap from coin page */
 
   .dIhIlI {
@@ -10,6 +10,9 @@
   .kpxeqD:has(> [data-title="Community"]) {
     display: none !important;
   }
+}
+
+@media (min-width: 760px) {
 
   /* remove community crap from home */
 /*
