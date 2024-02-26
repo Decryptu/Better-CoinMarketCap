@@ -134,6 +134,14 @@ body.NIGHT .jWCyUp, body.NIGHT .jSZydc, body.NIGHT .kGHtvD, body.NIGHT .hYGzGT, 
   border-radius: .5rem !important;
 }
 
+table.cmc-table thead tr th:first-child {
+  border-top-left-radius: .5rem;
+}
+
+table.cmc-table thead tr th:last-child {
+  border-top-right-radius: .5rem;
+}
+
 body.NIGHT .ePzlNg.ePzlNg th, .dsflYb th{
   border-top: none !important;
 }
