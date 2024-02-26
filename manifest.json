@@ -23,7 +23,7 @@
         "*://coinmarketcap.com/wp-admin/*"
     ],    
       "css": ["styles.css"],
-      "js": ["content.js", "ratio.js", "cards.js"]
+      "js": ["content.js", "ratio.js", "cards.js", "fdv.js"]
     }
   ]
 }

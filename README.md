@@ -7,6 +7,8 @@ Enhance your CoinMarketCap experience with "Better CoinMarketCap," a Chrome exte
 - **Clean Interface:** Experience CoinMarketCap without the clutter of community sections and ads.
 - **Market Overview Card:** Get a quick and informative overview of the market with the total market cap, 24h trading volume, and BTC/ETH dominance, directly on the homepage. This feature replaces the previous "Community" section that was prone to scams and viruses, ensuring a safer browsing experience.
 - **Market Cap to Volume Ratio:** Calculate and display the market cap to volume ratio for each cryptocurrency, with a color indicator to quickly identify if a crypto's market cap is inflated or if its volume is too low compared to its market cap. This feature helps in finding cryptocurrencies that may have an inflated market cap, providing a valuable tool for better investment decisions.
+- **Fully Diluted Valuation (FDV):** Introduces the calculation and display of the Fully Diluted Valuation for each cryptocurrency, alongside the market cap in the listings. The FDV is color-coded based on the ratio of market cap to FDV - green for ratios between 0-10%, yellow for 10-50%, and red for ratios over 50%, providing an additional layer of insight for investment decisions. Infinite supplies are marked with an "∞" symbol, without color coding.
+- **Dynamic Theme Support:** Automatically adjusts the styling of added elements (such as FDV and ratio indicators) to match CoinMarketCap's day and night themes for seamless integration.
 - **Modern Design:** Enjoy a modernized and intuitive design for easier navigation.
 - **Open Source:** Full transparency with an open-source codebase on GitHub.
 
@@ -22,7 +24,7 @@ Before | After
 ### Coin Page View
 Before | After
 :---:|:---:
-![Old Coin Page](images/2-old.png) | ![New Coin Page](images/2-new.png)
+![Old Coin Page](images/2-old.png) | ![New Coin Page with FDV and Market Cap to Volume Ratio](images/2-new.png)
 
 ## Installation
 
@@ -50,4 +52,4 @@ This Chrome extension is not affiliated with, endorsed, or sponsored by CoinMark
 
 ---
 
-Enjoy a better CoinMarketCap with less noise and more focus on the data that matters to you, including insightful analysis on market cap and volume ratios, and a safer browsing experience with the new "Market Overview" card.
+Enjoy a better CoinMarketCap with less noise and more focus on the data that matters to you, including insightful analysis on market cap and volume ratios, a safer browsing experience with the new "Market Overview" card, and enhanced financial insights with FDV calculations.
