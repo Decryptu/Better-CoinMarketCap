@@ -27,8 +27,8 @@ function displayFDVWithDynamicColoring() {
         fdvColor = 'var(--down-color)'; // Red
       }
 
-      fdvText = `FDV: <span style="color: ${fdvColor};">$${fdv.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</span>`;
-      } else {
+      fdvText = `FDV: <span style="color: ${fdvColor};">$${Math.floor(fdv).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>`;
+        } else {
         fdvText = 'FDV: ∞';
       }
   
