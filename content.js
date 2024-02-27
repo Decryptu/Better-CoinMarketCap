@@ -9,15 +9,18 @@ function addCustomContent() {
     const extensionVersion = chrome.runtime.getManifest().version;
     newContentDiv.innerHTML = `<span class="sc-f70bb44c-0 jNqpFI base-text">Better CMC:</span>&nbsp;<a href="https://github.com/Decryptu/Better-CoinMarketCap" class="sc-f70bb44c-0 iQEJet cmc-link">${extensionVersion}</a>`;
 
-    // Look for the desired div where our new content should be added
-    const desiredDiv = document.querySelector('.sc-57ed43ab-1.dysfqt.global-stats');
-    if (desiredDiv) {
-        // Add the new content to the desired div
-        desiredDiv.appendChild(newContentDiv);
+    // Use a more stable selector based on data-role and structural hierarchy
+    const headerWrapper = document.querySelector('div[data-role="global-header"]');
+    if (headerWrapper) {
+        const globalStatsDiv = headerWrapper.querySelector('.global-stats');
+        if (globalStatsDiv) {
+            // Add the new content to the desired div
+            globalStatsDiv.appendChild(newContentDiv);
 
-        // Stop observing changes since we've added our content
-        observer.disconnect();
-        console.log("Custom content added successfully.");
+            // Stop observing changes since we've added our content
+            observer.disconnect();
+            console.log("Custom content added successfully.");
+        }
     }
 }
 
@@ -25,8 +28,9 @@ function addCustomContent() {
 const observeChanges = function(mutationsList, observer) {
     for(const mutation of mutationsList) {
         if (mutation.type === 'childList') {
-            // Check if the desired div is now in the DOM
-            if (document.querySelector('.sc-57ed43ab-1.dysfqt.global-stats')) {
+            // Use the updated selector to check if the desired div is now in the DOM
+            const headerWrapper = document.querySelector('div[data-role="global-header"]');
+            if (headerWrapper && headerWrapper.querySelector('.global-stats')) {
                 addCustomContent();
                 break; // Exit the loop once our content has been added
             }
@@ -42,6 +46,3 @@ const config = { attributes: false, childList: true, subtree: true };
 
 // Start observing the document body for changes including the entire subtree
 observer.observe(document.body, config);
-
-// Note: This setup observes changes in the entire body to find the right moment to add our custom content.
-// It's tailored to be gentle and efficient, stopping as soon as our job is done.

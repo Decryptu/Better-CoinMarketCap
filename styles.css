@@ -98,6 +98,11 @@
   .sc-8e172972-0.cIxgqW.app-banner{
     display: none !important;
   }
+
+  /* add padding to pagination */
+  .bqoipH{
+    padding: 1rem 0rem;
+  }
 }
 
 /* dark theme */

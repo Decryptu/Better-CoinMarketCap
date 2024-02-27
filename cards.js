@@ -57,7 +57,7 @@
                                 <p class="sc-4984dd93-0 etDiuO card-info-p"></p>
                             </div>
                             <div class="card-data-div">
-                                <span class="card-data-span .kilDhP .price-change"></span>
+                                <span class="card-data-span .kilDhP .VyUFR"></span>
                             </div>
                         </div>
                         <div class="sc-c50d2aab-13 kilDhP card-2">
@@ -65,7 +65,7 @@
                                 <p class="sc-4984dd93-0 etDiuO card-info-p"></p>
                             </div>
                             <div class="card-data-div">
-                                <span class="card-data-span .kilDhP .price-change"></span>
+                                <span class="card-data-span .kilDhP .VyUFR"></span>
                             </div>
                         </div>
                         <div class="sc-c50d2aab-13 kilDhP card-3">
@@ -73,7 +73,7 @@
                                 <p class="sc-4984dd93-0 etDiuO card-info-p"></p>
                             </div>
                             <div class="card-data-div">
-                                <span class="card-data-span .kilDhP .price-change"></span>
+                                <span class="card-data-span .kilDhP .VyUFR"></span>
                             </div>
                         </div>
                     </div>`;
@@ -85,7 +85,8 @@
                 updateThemeClasses();
 
                 // Fetch and populate data from the header
-                const statItems = document.querySelectorAll('.sc-57ed43ab-1.dysfqt.global-stats .sc-f70bb44c-0.joWCPb.glo-stat-item');
+                const globalHeader = document.querySelector('div[data-role="global-header"]');
+                const statItems = globalHeader.querySelectorAll('.glo-stat-item');
                 const cards = newDiv.querySelectorAll('.sc-c50d2aab-13.kilDhP');
                 [2, 3, 4].forEach((index, i) => { // Adjusted to 0-based indexing
                     if (statItems[index]) {
