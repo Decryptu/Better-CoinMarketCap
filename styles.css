@@ -118,6 +118,11 @@
   .card-data-span{
     font-weight: 500;
   }
+
+  /* coin ticker color */
+  .coin-item-symbol{
+    color: var(--color-light-neutral-5) !important;
+  }
 }
 
 /* dark theme */
