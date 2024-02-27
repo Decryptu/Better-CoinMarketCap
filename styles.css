@@ -133,6 +133,7 @@
     align-self: center;
     margin-left: .5rem;
     font-size: var(--c-font-size-50);
+    font-weight: var(--c-font-weight-500);
   }
 }
 
