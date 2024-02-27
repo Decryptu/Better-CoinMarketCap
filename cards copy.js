@@ -1,14 +1,19 @@
 (function() {
+    // Flags to prevent multiple initializations
     let initialized = false;
 
-    function uniqueCreateMarketOverviewExtensionV3() {
+    // Unique function name to avoid conflicts
+    function uniqueCreateMarketOverviewExtensionV2() {
         console.log('Attempting to initialize Market Overview Extension...');
 
+        // Function to update theme-specific classes
         const updateThemeClasses = () => {
             const isNight = document.body.classList.contains('NIGHT');
             const pElements = document.querySelectorAll('.card-info-p');
             pElements.forEach(p => {
+                // Remove both classes to avoid conflicts
                 p.classList.remove('etDiuO', 'kKpPOn');
+                // Add the appropriate class based on the theme
                 if (isNight) {
                     p.classList.add('etDiuO');
                 } else {
@@ -17,6 +22,7 @@
             });
         };
 
+        // Function to hide the existing div and create the new structure
         const updateMarketOverview = () => {
             if (initialized) {
                 console.log('Market Overview Extension already initialized. Skipping...');
@@ -26,9 +32,13 @@
             const targetDiv = document.querySelector('.jSZydc .sc-1a5c8bdf-0.dyzKpp .sc-1a5c8bdf-1.aZNqQ');
             if (targetDiv) {
                 console.log('Target div found. Proceeding with updates...');
+                // Mark as initialized to prevent future executions
                 initialized = true;
+
+                // Hide the existing div
                 targetDiv.style.display = 'none';
 
+                // Create new div structure
                 const newDiv = document.createElement('div');
                 newDiv.className = 'sc-1a5c8bdf-1 aZNqQ';
                 newDiv.innerHTML = `
@@ -48,7 +58,6 @@
                             </div>
                             <div class="card-data-div">
                                 <span class="card-data-span kilDhP price-change"></span>
-                                <span class="card-change-span"></span>
                             </div>
                         </div>
                         <div class="sc-c50d2aab-13 kilDhP card-2">
@@ -57,7 +66,6 @@
                             </div>
                             <div class="card-data-div">
                                 <span class="card-data-span kilDhP price-change"></span>
-                                <span class="card-change-span"></span>
                             </div>
                         </div>
                         <div class="sc-c50d2aab-13 kilDhP card-3">
@@ -70,65 +78,66 @@
                         </div>
                     </div>`;
 
+                // Insert the new div after the hidden one
                 targetDiv.parentNode.insertBefore(newDiv, targetDiv.nextSibling);
+
+                // Update theme classes initially and on theme change
                 updateThemeClasses();
 
+                // Fetch and populate data from the header
                 const globalHeader = document.querySelector('div[data-role="global-header"]');
                 const statItems = globalHeader.querySelectorAll('.glo-stat-item');
                 const cards = newDiv.querySelectorAll('.sc-c50d2aab-13.kilDhP');
-
-                [2, 3, 4].forEach((index, i) => {
+                [2, 3, 4].forEach((index, i) => { // Adjusted to 0-based indexing
                     if (statItems[index]) {
                         const text = statItems[index].querySelector('.sc-f70bb44c-0.jNqpFI.base-text').innerText;
-                        let data, percentageChange, svgHtml = '';
+                        let data;
+                        // Check if the data is directly in an <a> tag or within a <div> first
                         const directA = statItems[index].querySelector('a');
                         const divWrappedA = statItems[index].querySelector('.sc-59e437b5-2.hRcdAX a');
-                        const percentageSpan = statItems[index].querySelector('.sc-59e437b5-3.dWZjJC');
-                        const svgElement = statItems[index].querySelector('.sc-59e437b5-2.hRcdAX svg');
-                        
                         if (directA && !divWrappedA) {
                             data = directA.innerText;
                         } else if (divWrappedA) {
                             data = divWrappedA.innerText;
                         }
-                        if (svgElement) {
-                            svgHtml = svgElement.outerHTML; // Capture the SVG HTML
-                        }
-                        if (percentageSpan) {
-                            percentageChange = percentageSpan.outerHTML;
-                        }
 
-                        if (data) {
+                        if (data) { // Ensure data is available before attempting to populate
                             cards[i].querySelector('.card-info-p').innerText = text;
                             cards[i].querySelector('.card-data-span').innerText = data;
-                            if (percentageChange && i < 2) { // Only for Market Cap and 24H Volume
-                                cards[i].querySelector('.card-change-span').innerHTML = svgHtml + percentageChange; // Include SVG in the output
-                            }
+                            console.log(`Card ${i+1} populated with data.`);
+                        } else {
+                            console.log(`Data for card ${i+1} not found.`);
                         }
                     }
                 });
-
-                const themeObserver = new MutationObserver(mutations => {
-                    mutations.forEach(mutation => {
-                        if (mutation.attributeName === 'class') {
-                            updateThemeClasses();
-                        }
-                    });
-                });
-                themeObserver.observe(document.body, { attributes: true });
-
-                observer.disconnect();
             } else {
-                console.log('Target div not found. Retry in 500ms...');
-                setTimeout(updateMarketOverview, 500);
+                console.log('Target div not found. Waiting...');
             }
         };
 
-        const observer = new MutationObserver((mutations) => {
-            updateMarketOverview();
+        // Listen for theme changes to update classes dynamically
+        const themeObserver = new MutationObserver(updateThemeClasses);
+        themeObserver.observe(document.body, {
+            attributes: true, // Listen for attribute changes
+            attributeFilter: ['class'] // Specifically for class changes
         });
-        observer.observe(document.body, { childList: true, subtree: true });
+
+        // MutationObserver to wait for the page to load the required divs
+        const observer = new MutationObserver((mutations, obs) => {
+            if (!initialized) {
+                updateMarketOverview();
+            } else {
+                console.log('Initialization complete. Disconnecting observer...');
+                obs.disconnect(); // Stop observing after initialization is complete
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
     }
 
-    uniqueCreateMarketOverviewExtensionV3();
+    // Execute the function
+    uniqueCreateMarketOverviewExtensionV2();
 })();

@@ -123,6 +123,17 @@
   .coin-item-symbol{
     color: var(--color-light-neutral-5) !important;
   }
+
+  /* market overview center percent */
+  .card-data-div{
+    display: flex;
+  }
+
+  .card-change-span{
+    align-self: center;
+    margin-left: .5rem;
+    font-size: var(--c-font-size-50);
+  }
 }
 
 /* dark theme */
