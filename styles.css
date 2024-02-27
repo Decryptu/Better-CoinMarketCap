@@ -60,7 +60,7 @@
 
   /* back up fix position */
 
-  .dmGahW.dmGahW, .dDHGBA {
+  .dmGahW.dmGahW, .dDHGBA, .hHIalA {
     right: 3% !important;
     bottom: 3% !important;
     opacity: .5!important;
@@ -102,6 +102,21 @@
   /* add padding to pagination */
   .bqoipH{
     padding: 1rem 0rem;
+  }
+
+  /* reduce crypto name column width */
+  .eLtPTk{
+    width: auto !important;
+  }
+
+  /* bottom section in search */
+  .jWqqKF{
+    background-color: var(--control-background-color) !important;
+  }
+
+  /* market overview weight */
+  .card-data-span{
+    font-weight: 500;
   }
 }
 
