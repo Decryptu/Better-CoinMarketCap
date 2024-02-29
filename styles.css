@@ -162,6 +162,24 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  /* fix border radius of table */
+
+  table.cmc-table thead tr th:first-child {
+    border-top-left-radius: .5rem;
+  }
+  
+  table.cmc-table thead tr th:last-child {
+    border-top-right-radius: .5rem;
+  }
+  
+  .cmc-table tbody tr:nth-child(100) td:first-child {
+    border-bottom-left-radius: 0.5rem;
+  }
+  
+  .cmc-table tbody tr:nth-child(100) td:last-child {
+    border-bottom-right-radius: 0.5rem;
+  }
   
 }
 
@@ -197,14 +215,6 @@ body.NIGHT .jWCyUp, body.NIGHT .jSZydc, body.NIGHT .kGHtvD, body.NIGHT .hYGzGT, 
   border: 1px solid var(--border-decrypt) !important;
   box-shadow: none !important;
   border-radius: .5rem !important;
-}
-
-table.cmc-table thead tr th:first-child {
-  border-top-left-radius: .5rem;
-}
-
-table.cmc-table thead tr th:last-child {
-  border-top-right-radius: .5rem;
 }
 
 body.NIGHT .ePzlNg.ePzlNg th, .dsflYb th{
