@@ -4,15 +4,17 @@ console.log("Better CMC Extension Loaded");
 function addCustomContent() {
     // Create a new div element
     const newContentDiv = document.createElement('div');
-    newContentDiv.className = 'sc-f70bb44c-0 joWCPb glo-stat-item';
+    // Assuming 'glo-stat-item' is a stable class name; otherwise, adjust as needed
+    newContentDiv.className = 'sc-f70bb44c-0 CCiJc glo-stat-item'; 
     // Fetch the extension version from manifest.json
     const extensionVersion = chrome.runtime.getManifest().version;
-    newContentDiv.innerHTML = `<span class="sc-f70bb44c-0 jNqpFI base-text">Better CMC:</span>&nbsp;<a href="https://github.com/Decryptu/Better-CoinMarketCap" class="sc-f70bb44c-0 iQEJet cmc-link">${extensionVersion}</a>`;
+    newContentDiv.innerHTML = `<span class="base-text">Better CMC:</span>&nbsp;<a href="https://github.com/Decryptu/Better-CoinMarketCap" class="cmc-link">${extensionVersion}</a>`;
 
-    // Use a more stable selector based on data-role and structural hierarchy
-    const headerWrapper = document.querySelector('div[data-role="global-header"]');
-    if (headerWrapper) {
-        const globalStatsDiv = headerWrapper.querySelector('.global-stats');
+    // Use a stable attribute selector to find the global container
+    const globalContainer = document.querySelector('div[data-role="global-container"]');
+    if (globalContainer) {
+        // Assuming 'global-stats' is a stable class within the container; adjust if needed
+        const globalStatsDiv = globalContainer.querySelector('.global-stats');
         if (globalStatsDiv) {
             // Add the new content to the desired div
             globalStatsDiv.appendChild(newContentDiv);

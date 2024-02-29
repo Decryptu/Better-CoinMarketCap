@@ -23,16 +23,11 @@
                 return;
             }
 
-            // Use querySelectorAll to get all matching elements
-            const targetDivs = document.querySelectorAll('.grid > div[style="padding-top:1px"] > div > div[data-sensors-click="true"]');
-
-            // Check if there are at least two elements matching the selector
-            if (targetDivs.length > 1) {
-                // Specifically select the second div with [data-sensors-click="true"]
-                const secondTargetDiv = targetDivs[1]; // Second element has index 1
-
-                console.log('Second target div with data-sensors-click="true" found. Proceeding with updates...');
-                initialized = true;                
+            const targetDiv = document.querySelector('.jSZydc .sc-1a5c8bdf-0.dyzKpp .sc-1a5c8bdf-1.aZNqQ');
+            if (targetDiv) {
+                console.log('Target div found. Proceeding with updates...');
+                initialized = true;
+                targetDiv.style.display = 'none';
 
                 const newDiv = document.createElement('div');
                 newDiv.className = 'sc-1a5c8bdf-1 aZNqQ';
@@ -75,8 +70,7 @@
                         </div>
                     </div>`;
 
-                    // Append the new div as a child of the secondTargetDiv
-                    secondTargetDiv.appendChild(newDiv);
+                    targetDiv.parentNode.insertBefore(newDiv, targetDiv.nextSibling);
                     updateThemeClasses();
     
                     const globalHeader = document.querySelector('div[data-role="global-header"]');
@@ -129,12 +123,6 @@
                         });
                     });
                     themeObserver.observe(document.body, { attributes: true });
-
-                    // Hide the first div inside the second div with data-sensors-click="true"
-                    const firstInnerDiv = secondTargetDiv.querySelector('div');
-                    if (firstInnerDiv) {
-                        firstInnerDiv.style.display = 'none';
-                    }
                 } else {
                     console.log('Target div not found. Retry in 500ms...');
                     setTimeout(updateMarketOverview, 500);

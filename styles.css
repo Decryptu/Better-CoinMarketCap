@@ -78,7 +78,7 @@
 
   /* remove api and get listed */
 
-  .dBWlaq{
+  .UserSection_listed_button__1OCVI.UserSection_override__2hv2J{
     display: none !important;
   }
 
@@ -135,6 +135,34 @@
     font-size: var(--c-font-size-50);
     font-weight: var(--c-font-weight-500);
   }
+
+  /* hide old card for market overview */
+  .hidden-div {
+    display: none;
+  }
+
+  /* fix market overview title */
+  .sc-61710cb6-0.fyYcGd {
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Places children at start and end with maximum space between */
+    align-items: center; /* Optional: Aligns items vertically in the center, if needed */
+    height: 26px;
+    margin-bottom: 6px;
+  }
+
+  .sc-61710cb6-0.fyYcGd a {
+    font-weight: var(--c-font-weight-600);
+    font-size: var(--c-font-size-75);
+  }
+
+  .card-title{
+    font-weight: bold;
+    font-size: var(--c-font-size-200);
+    color: var(--color-primary-black);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
 }
 
 /* dark theme */
