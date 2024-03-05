@@ -24,7 +24,7 @@
             }
 
             // Use querySelectorAll to get all matching elements
-            const targetDivs = document.querySelectorAll('.grid > div[style="padding-top:1px"] > div > div[data-sensors-click="true"]');
+            const targetDivs = document.querySelectorAll('.grid > div[style="padding-top:1px"] > div > div > div[data-sensors-click="true"]');
 
             // Check if there are at least two elements matching the selector
             if (targetDivs.length > 1) {
