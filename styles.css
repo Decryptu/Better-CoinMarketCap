@@ -1,10 +1,10 @@
 @media (min-width: 1280px) {
   /* remove community crap from coin page */
 
-  .JsTum {
+  .cnisWH {
     grid-template-columns: 25% 75% !important;
   }
-  .JsTum > div.coin-Community {
+  .cnisWH > div.coin-Community {
     display: none !important;
   }
   .kpxeqD:has(> [data-title="Community"]) {
