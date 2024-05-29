@@ -7,14 +7,14 @@
     const updateThemeClasses = () => {
       const isNight = document.body.classList.contains("NIGHT");
       const pElements = document.querySelectorAll(".card-info-p");
-      pElements.forEach((p) => {
+      for (const p of pElements) {
         p.classList.remove("etDiuO", "kKpPOn");
         if (isNight) {
           p.classList.add("etDiuO");
         } else {
           p.classList.add("kKpPOn");
         }
-      });
+      }
     };
 
     const updateMarketOverview = () => {
@@ -25,15 +25,12 @@
         return;
       }
 
-      // Use querySelectorAll to get all matching elements
       const targetDivs = document.querySelectorAll(
         '.grid > div[style="padding-top:1px"] > div > div > div[data-sensors-click="true"]'
       );
 
-      // Check if there are at least two elements matching the selector
       if (targetDivs.length > 1) {
-        // Specifically select the second div with [data-sensors-click="true"]
-        const secondTargetDiv = targetDivs[1]; // Second element has index 1
+        const secondTargetDiv = targetDivs[1];
 
         console.log(
           'Second target div with data-sensors-click="true" found. Proceeding with updates...'
@@ -43,45 +40,44 @@
         const newDiv = document.createElement("div");
         newDiv.className = "sc-1a5c8bdf-1 aZNqQ";
         newDiv.innerHTML = `
-                    <div>
-                        <div class="sc-61710cb6-0 fyYcGd">
-                            <div class="card-title">
-                                <span class="card-title-icon">🪐</span>
-                                <span class="card-title-text">Market Overview</span>
-                            </div>
-                            <a href="/charts">
-                                <span>More</span>
-                            </a>
-                        </div>
-                        <div class="sc-c50d2aab-13 kilDhP card-1">
-                            <div class="card-info-div">
-                                <p class="sc-4984dd93-0 etDiuO card-info-p"></p>
-                            </div>
-                            <div class="card-data-div">
-                                <span class="card-data-span kilDhP price-change"></span>
-                                <span class="card-change-span"></span>
-                            </div>
-                        </div>
-                        <div class="sc-c50d2aab-13 kilDhP card-2">
-                            <div class="card-info-div">
-                                <p class="sc-4984dd93-0 etDiuO card-info-p"></p>
-                            </div>
-                            <div class="card-data-div">
-                                <span class="card-data-span kilDhP price-change"></span>
-                                <span class="card-change-span"></span>
-                            </div>
-                        </div>
-                        <div class="sc-c50d2aab-13 kilDhP card-3">
-                            <div class="card-info-div">
-                                <p class="sc-4984dd93-0 etDiuO card-info-p"></p>
-                            </div>
-                            <div class="card-data-div">
-                                <span class="card-data-span kilDhP price-change"></span>
-                            </div>
-                        </div>
-                    </div>`;
+        <div>
+          <div class="sc-61710cb6-0 fyYcGd">
+            <div class="card-title">
+              <span class="card-title-icon">🪐</span>
+              <span class="card-title-text">Market Overview</span>
+            </div>
+            <a href="/charts">
+              <span>More</span>
+            </a>
+          </div>
+          <div class="sc-c50d2aab-13 kilDhP card-1 card-row">
+            <div class="card-info-div">
+              <p class="sc-4984dd93-0 etDiuO card-info-p">Market Cap:</p>
+            </div>
+            <div class="card-data-div">
+              <span class="card-data-span kilDhP price-change"></span>
+              <span class="card-change-span"></span>
+            </div>
+          </div>
+          <div class="sc-c50d2aab-13 kilDhP card-2 card-row">
+            <div class="card-info-div">
+              <p class="sc-4984dd93-0 etDiuO card-info-p">24h Vol:</p>
+            </div>
+            <div class="card-data-div">
+              <span class="card-data-span kilDhP price-change"></span>
+              <span class="card-change-span"></span>
+            </div>
+          </div>
+          <div class="sc-c50d2aab-13 kilDhP card-3 card-row">
+            <div class="card-info-div">
+              <p class="sc-4984dd93-0 etDiuO card-info-p">Dominance:</p>
+            </div>
+            <div class="card-data-div">
+              <span class="card-data-span kilDhP price-change"></span>
+            </div>
+          </div>
+        </div>`;
 
-        // Append the new div as a child of the secondTargetDiv
         secondTargetDiv.appendChild(newDiv);
         updateThemeClasses();
 
@@ -94,25 +90,15 @@
         [2, 3, 4].forEach((index, i) => {
           console.log(`Attempting to fetch data for card ${i + 1}`);
           if (statItems[index]) {
-            // Assume the descriptive text remains correctly targeted.
-            const textElement = statItems[index].querySelector(
-              ".sc-f70bb44c-0.jNqpFI.base-text"
-            );
-            const text = textElement ? textElement.innerText : "";
-
-            let data,
-              svgHtml = "",
-              percentageChange = "";
+            let data = "";
+            let svgHtml = "";
+            let percentageChange = "";
 
             if (i < 2) {
-              // For Market Cap and 24H Volume
-              // Selecting the first anchor element directly for data.
               const dataElement = statItems[index].querySelector("a");
-              // Assuming the structure, the percentage change is now selected via a span within the next div sibling of a.
               const percentageElement = dataElement
                 ? dataElement.nextElementSibling.querySelector("span")
                 : null;
-              // Selecting SVG remains the same, assuming it's directly under the same parent div as the percentage span.
               const svgElement = percentageElement
                 ? percentageElement.previousElementSibling
                 : null;
@@ -123,18 +109,15 @@
                 ? percentageElement.outerHTML
                 : "";
             } else {
-              // For Dominance
               const dominanceElement = statItems[index].querySelector("a");
               data = dominanceElement ? dominanceElement.innerText : "";
             }
 
             if (data) {
               console.log(`Successfully fetched data for card ${i + 1}`);
-              cards[i].querySelector(".card-info-p").innerText = text;
               cards[i].querySelector(".card-data-span").innerText = data;
 
               if (i < 2) {
-                // Only for Market Cap and 24H Volume
                 cards[i].querySelector(".card-change-span").innerHTML =
                   svgHtml + percentageChange;
               }
@@ -147,15 +130,14 @@
         });
 
         const themeObserver = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
+          for (const mutation of mutations) {
             if (mutation.attributeName === "class") {
               updateThemeClasses();
             }
-          });
+          }
         });
         themeObserver.observe(document.body, { attributes: true });
 
-        // Hide the first div inside the second div with data-sensors-click="true"
         const firstInnerDiv = secondTargetDiv.querySelector("div");
         if (firstInnerDiv) {
           firstInnerDiv.style.display = "none";
