@@ -4,7 +4,7 @@ function createRatioElement(ratio, color) {
     const pClass = document.body.classList.contains('NIGHT') ? 'sc-4984dd93-0 bpmdQz' : 'sc-4984dd93-0 ihZPK';
     const ratioElement = document.createElement('p');
     ratioElement.className = pClass;
-    ratioElement.innerHTML = `Ratio: <span style="color: ${color};"><span style="font-weight: 600;">${ratio}</span></span>`;
+    ratioElement.innerHTML = `Ratio: <span style="color: ${color};"><span style="font-weight: 500;">${ratio}</span></span>`;
     ratioElement.classList.add('custom-ratio');
     return ratioElement;
 }

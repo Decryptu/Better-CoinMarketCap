@@ -1,9 +1,9 @@
 @media (min-width: 1280px) {
   /* remove community crap from coin page */
-  .dDttUW {
+  .fQZpJQ {
     grid-template-columns: 25% 75% !important;
   }
-  .dDttUW > div.coin-Community {
+  .fQZpJQ > div.coin-Community {
     display: none !important;
   }
   .kpxeqD:has(> [data-title="Community"]) {
