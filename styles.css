@@ -1,12 +1,19 @@
 @media (min-width: 1280px) {
-  /* remove community crap from coin page */
-  .fQZpJQ {
+  /* Remove community section from coin page */
+  .cmc-body-wrapper .full-width-layout > div:first-child {
     grid-template-columns: 25% 75% !important;
   }
-  .fQZpJQ > div.coin-Community {
+
+  .cmc-body-wrapper
+    .full-width-layout
+    > div:first-child
+    > [data-title="Community"] {
     display: none !important;
   }
-  .kpxeqD:has(> [data-title="Community"]) {
+
+  .cmc-body-wrapper
+    .full-width-layout
+    > div:first-child:has(> [data-title="Community"]) {
     display: none !important;
   }
 }
@@ -25,7 +32,7 @@
   }
 
   .block-newsletter,
-  .seo-text__title {
+  .seo-text__title, .BasePopover_base__T5yOf {
     display: none !important;
   }
 
