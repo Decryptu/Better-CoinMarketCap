@@ -32,7 +32,7 @@
   }
 
   .block-newsletter,
-  .seo-text__title, .BasePopover_base__T5yOf {
+  .seo-text__title, .SummaryHeader_header-wrapper__aTGu6 {
     display: none !important;
   }
 
@@ -277,4 +277,33 @@ body.NIGHT .iJFlGY {
   font-size: var(--c-font-size-50);
   color: var(--c-color-text-secondary);
   font-weight: inherit;
+}
+
+.CoinsCard_list-container__F51m8, .DexPairsCard_list-container__Uc0wa {
+  gap: 0!important;
+}
+
+.card-content {
+  gap: 0.5rem!important;
+  margin-top: 0.5rem!important;
+}
+
+.Card_highlight-card__G_ptr.Card_is-link__BLT_1, .Card_highlight-card__G_ptr.Card_is-link__BLT_1, .card {
+  height: min-content!important;
+}
+
+.bVsWPX .grid {
+  margin-top: 2rem!important;
+}
+
+td {
+  padding: 0px 10px 0px 10px!important;
+}
+
+.icQitg, .fevCJf {
+  display: none!important;
+}
+
+.dWrCDO, .dWrCDO {
+  display: block!important;
 }

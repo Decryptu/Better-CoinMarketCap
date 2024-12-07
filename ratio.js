@@ -21,8 +21,8 @@ function updateRowWithRatio(row) {
         return;
     }
 
-    const marketCap = parseFloat(marketCapTd.innerText.replace(/[$,]/g, ''));
-    const volume = parseFloat(volumeTd.innerText.replace(/[$,]/g, ''));
+    const marketCap = Number.parseFloat(marketCapTd.innerText.replace(/[$,]/g, ''));
+    const volume = Number.parseFloat(volumeTd.innerText.replace(/[$,]/g, ''));
     const ratio = Math.floor(marketCap / volume);
     const ratioColor = getRatioColor(ratio);
 
@@ -38,11 +38,10 @@ function updateRowWithRatio(row) {
 function getRatioColor(ratio) {
     if (ratio <= 50) {
         return 'var(--up-color)';
-    } else if (ratio <= 100) {
+    }if (ratio <= 100) {
         return '#f6b87e';
-    } else {
-        return 'var(--down-color)';
     }
+        return 'var(--down-color)';
 }
 
 // Improved initial update logic
@@ -63,12 +62,11 @@ const tableObserver = new MutationObserver((mutationsList, observer) => {
 
 const themeObserver = new MutationObserver((mutationsList, observer) => {
     if (mutationsList.some(mutation => mutation.attributeName === 'class')) {
-        document.querySelectorAll('.custom-ratio').forEach(element => {
+        for (const element of document.querySelectorAll('.custom-ratio')) {
             element.className = document.body.classList.contains('NIGHT') ? 'sc-4984dd93-0 bpmdQz custom-ratio' : 'sc-4984dd93-0 ihZPK custom-ratio';
-        });
+        }
     }
 });
-
 // Start with the improved initial update logic
 initialUpdate();
 

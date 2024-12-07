@@ -53,7 +53,7 @@ function displayFDVWithDynamicColoring() {
     const fdvElement = document.createElement("span");
     fdvElement.className = `${pClass} custom-fdv`; // Apply theme-dependent class
     fdvElement.style.display = "block";
-    fdvElement.style.marginTop = "5px";
+    fdvElement.style.marginTop = "1px";
     fdvElement.innerHTML = fdvText;
 
     const marketCapContainer = marketCapSpan.parentNode;
